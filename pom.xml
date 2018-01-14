@@ -27,14 +27,14 @@
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
-                <directory>source/production/resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
 
         <testSourceDirectory>src/test/java</testSourceDirectory>
         <testResources>
             <testResource>
-                <directory>source/test/java/resources</directory>
+                <directory>src/test/resources</directory>
             </testResource>
         </testResources>
 

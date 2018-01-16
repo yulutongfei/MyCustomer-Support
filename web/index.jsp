@@ -9,6 +9,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  Hello JSP
   </body>
 </html>

@@ -1,9 +1,8 @@
-<%--
+<%@ page import="java.util.Map" %><%--
   User: 孙许
   Date: 2018/01/16
   Time: 21:18
 --%>
-<%@ page session="false" import="java.util.Map" %>
 <%
     @SuppressWarnings("unchecked")
     Map<Integer, Ticket> ticketDatabase =
@@ -15,6 +14,7 @@
     <title>Customer Support</title>
 </head>
 <body>
+<a href="<c:url value="/login?logout"/>">Logout</a>
 <h2>Tickets</h2>
 <a href="<c:url value="/tickets">
             <c:param name="action" value="create" />

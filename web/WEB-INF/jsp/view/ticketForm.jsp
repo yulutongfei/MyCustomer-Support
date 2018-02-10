@@ -1,3 +1,4 @@
+<%--@elvariable id="username" type="java.lang.String"--%>
 <%--
   User: 孙许
   Date: 2018/01/16
@@ -12,7 +13,8 @@
 <h2>Create a Ticket</h2>
 <form method="post" action="tickets" enctype="multipart/form-data">
     <input type="hidden" name="action" value="create"/>
-    <%=session.getAttribute("username")%><br/><br/>
+    <input type="hidden" name="customerName" value="${username}"/>
+    ${username}<br/><br/>
     Subject<br/>
     <input type="text" name="subject"><br/><br/>
     Body<br/>

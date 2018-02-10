@@ -1,3 +1,4 @@
+<%--@elvariable id="numberOfSessions" type="java.lang.Integer"--%>
 <%@ page import="java.util.List" %><%--
   User: 孙许
   Date: 2018/02/08
@@ -16,7 +17,6 @@
     }
 %>
 <%
-    int numberOfSession = (int) request.getAttribute("numberOfSession");
     List<HttpSession> sessions = (List<HttpSession>) request.getAttribute("sessionList");
 %>
 <html>
@@ -26,7 +26,7 @@
 <body>
 <a href="<c:url value="/login?logout"/>">Logout</a>
 <h2>Sessions</h2>
-There are a total of <%= numberOfSession %> active sessions in this application.<br/><br/>
+There are a total of ${numberOfSessions} active sessions in this application.<br/><br/>
 <%
     long timestamp = System.currentTimeMillis();
     for (HttpSession aSession : sessions) {

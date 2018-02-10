@@ -1,10 +1,11 @@
+<%--@elvariable id="ticketId" type="java.lang.String"--%>
+<%--@elvariable id="ticket" type="com.sunxu.Ticket"--%>
 <%--
   User: 孙许
   Date: 2018/01/16
   Time: 21:18
 --%>
 <%
-    String ticketId = (String) request.getAttribute("ticketId");
     Ticket ticket = (Ticket) request.getAttribute("ticket");
 %>
 <html>
@@ -13,25 +14,21 @@
 </head>
 <body>
 <a href="<c:url value="/login?logout"/>">Logout</a>
-<h2>Ticket #<%= ticketId%>: <%= ticket.getSubject()%>
+<h2>Ticket #${ticketId}: ${ticket.subject}
 </h2>
-<i>Customer Nmae - <%= ticket.getCustomerName()%>
+<i>Customer Name - ${ticket.customerName}
 </i><br/><br/>
-<%= ticket.getBody()%><br/><br/>
+${ticket.body}<br/><br/>
 <%
     if (ticket.getNumberOfAttachments() > 0) {
 %>Attachments: <%
-    int i = 0;
     for (Attachment a : ticket.getAttachments()) {
-        if (i++ > 0) {
-            out.print(", ");
 %><a href="<c:url value="/tickets">
                         <c:param name="action" value="download" />
-                        <c:param name="ticketId" value="<%= ticketId%>" />
+                        <c:param name="ticketId" value="${ticketId}" />
                         <c:param name="attachment" value="<%= a.getName()%>" />
                     </c:url> "><%= a.getName()%>
 </a> <%
-        }
     }
 %><br/><br/><%
     }

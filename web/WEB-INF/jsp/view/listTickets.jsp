@@ -1,13 +1,8 @@
-<%@ page import="java.util.Map" %><%--
+<%--@elvariable id="ticketDatabase" type="java.util.Map<Integer, com.sunxu.Ticket"--%><%--
   User: 孙许
   Date: 2018/01/16
   Time: 21:18
 --%>
-<%
-    @SuppressWarnings("unchecked")
-    Map<Integer, Ticket> ticketDatabase =
-            (Map<Integer, Ticket>) request.getAttribute("ticketDatabase");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +15,6 @@
             <c:param name="action" value="create" />
         </c:url>">Create Ticket</a><br/><br/>
 <c:choose>
-    <%--@elvariable id="ticketDatabase" type="java.util.Map<Integer, com."--%>
     <c:when test="${fn:length(ticketDatabase) == 0}">
         <i>There are no tickets in the system.</i>
     </c:when>

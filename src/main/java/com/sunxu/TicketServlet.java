@@ -35,10 +35,6 @@ public class TicketServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        if (request.getSession().getAttribute("username") == null) {
-            response.sendRedirect("login");
-            return;
-        }
         String action = request.getParameter("action");
         if (action == null) {
             action = "list";
@@ -96,11 +92,6 @@ public class TicketServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
-
-        if (request.getSession().getAttribute("username") == null) {
-            response.sendRedirect("login");
-            return;
-        }
         String action = request.getParameter("action");
         if (action == null) {
             action = "list";
